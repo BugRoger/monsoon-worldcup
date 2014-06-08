@@ -5,8 +5,9 @@ ENV HOME /root
 
 RUN locale-gen en_US.UTF-8
 RUN update-locale LANG=en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 RUN apt-get -y update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql-9.3
+RUN LC_ALL=en_US.UTF-8 DEBIAN_FRONTEND=noninteractive apt-get install -y postgresql-9.3
 
 # Add Postgres to runit
 RUN mkdir /etc/service/postgres

@@ -6,17 +6,16 @@ docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 
 # Build containers from Dockerfiles
-#docker build -t postgres /monsoon-worldcup/docker/postgres
-docker build -t rails /monsoon-worldcup/docker/rails
+docker build -t postgres /monsoon-worldcup/docker/postgres
+docker build -t rails    /monsoon-worldcup
 
 # Run and link the containers
-docker run -d --name postgres -e POSTGRESQL_USER=docker -e POSTGRESQL_PASS=docker postgres:latest
-docker run -d -p 3000:3000 -v /monsoon-worldcup:/monsoon-worldcup --link postgres:db --name rails rails:latest
+docker run -d -v /var/lib/postgresql:/data -e POSTGRESQL_USER=docker -e POSTGRESQL_PASS=docker --name postgres 792c02117e6d # postgres:latest
+docker run -d -v /monsoon-worldcup:/monsoon-worldcup -p 3000:3000 --link postgres:db --name rails rails:latest
 SCRIPT
 
-
 $start = <<SCRIPT
-#docker start postgres
+docker start postgres
 docker start rails
 SCRIPT
 
