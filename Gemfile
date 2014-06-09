@@ -11,8 +11,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'rails_admin'
+
 group :development do
   gem 'spring'
+  gem 'seed_dump'
 end
 
 group :development, :test do

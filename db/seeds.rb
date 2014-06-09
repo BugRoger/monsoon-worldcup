@@ -1,7 +1,98 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Arena.create!([
+  {name: "Arena Corinthians"},
+  {name: "Estádio das Dunas"},
+  {name: "Arena Fonte Nova"},
+  {name: "Arena Pantanal"},
+  {name: "Estádio Mineirão"},
+  {name: "Estádio Castelão"},
+  {name: "Arena Amazônia"},
+  {name: "Arena Pernambuco"},
+  {name: "Estádio Nacional de Brasilia"},
+  {name: "Estádio Beira-Rio"},
+  {name: "Estádio Maracanã"},
+  {name: "Arena da Baixada"}
+])
+Location.create!([
+  {name: "Curitiba", arena_id: 12},
+  {name: "Rio de Janeiro", arena_id: 11},
+  {name: "Porto Alegre", arena_id: 10},
+  {name: "Brasília", arena_id: 9},
+  {name: "Recife", arena_id: 8},
+  {name: "Manaus", arena_id: 7},
+  {name: "Fortaleza", arena_id: 6},
+  {name: "Belo Horizonte", arena_id: 5},
+  {name: "Cuiabá", arena_id: 4},
+  {name: "Salvador", arena_id: 3},
+  {name: "Natal", arena_id: 2},
+  {name: "São Paulo", arena_id: 1}
+])
+Match.create!([
+  {location_id: 1, home_team_id: 28, away_team_id: 12, stage_id: 1, starts_at: "2014-06-12 22:00:00"},
+  {location_id: 2, home_team_id: 25, away_team_id: 2, stage_id: 1, starts_at: "2014-06-13 18:00:00"},
+  {location_id: 3, home_team_id: 21, away_team_id: 18, stage_id: 1, starts_at: "2014-06-13 21:00:00"},
+  {location_id: 4, home_team_id: 29, away_team_id: 6, stage_id: 1, starts_at: "2014-06-13 18:00:00"},
+  {location_id: 5, home_team_id: 30, away_team_id: 16, stage_id: 1, starts_at: "2014-06-14 13:00:00"},
+  {location_id: 6, home_team_id: 32, away_team_id: 23, stage_id: 1, starts_at: "2014-06-14 16:00:00"},
+  {location_id: 7, home_team_id: 13, away_team_id: 17, stage_id: 1, starts_at: "2014-06-14 18:00:00"},
+  {location_id: 8, home_team_id: 3, away_team_id: 8, stage_id: 1, starts_at: "2014-06-14 22:00:00"},
+  {location_id: 9, home_team_id: 22, away_team_id: 31, stage_id: 1, starts_at: "2014-06-15 13:00:00"},
+  {location_id: 10, home_team_id: 14, away_team_id: 24, stage_id: 1, starts_at: "2014-06-15 16:00:00"},
+  {location_id: 11, home_team_id: 27, away_team_id: 11, stage_id: 1, starts_at: "2014-06-15 19:00:00"},
+  {location_id: 3, home_team_id: 15, away_team_id: 19, stage_id: 1, starts_at: "2014-06-16 13:00:00"},
+  {location_id: 12, home_team_id: 7, away_team_id: 5, stage_id: 1, starts_at: "2014-06-16 16:00:00"},
+  {location_id: 2, home_team_id: 4, away_team_id: 26, stage_id: 1, starts_at: "2014-06-16 19:00:00"},
+  {location_id: 5, home_team_id: 10, away_team_id: 1, stage_id: 1, starts_at: "2014-06-17 13:00:00"},
+  {location_id: 6, home_team_id: 28, away_team_id: 25, stage_id: 1, starts_at: "2014-06-17 16:00:00"},
+  {location_id: 4, home_team_id: 20, away_team_id: 9, stage_id: 1, starts_at: "2014-06-17 18:00:00"},
+  {location_id: 10, home_team_id: 6, away_team_id: 18, stage_id: 1, starts_at: "2014-06-18 13:00:00"},
+  {location_id: 11, home_team_id: 21, away_team_id: 29, stage_id: 1, starts_at: "2014-06-18 16:00:00"},
+  {location_id: 7, home_team_id: 2, away_team_id: 12, stage_id: 1, starts_at: "2014-06-18 18:00:00"},
+  {location_id: 9, home_team_id: 30, away_team_id: 3, stage_id: 1, starts_at: "2014-06-19 13:00:00"},
+  {location_id: 1, home_team_id: 32, away_team_id: 13, stage_id: 1, starts_at: "2014-06-19 16:00:00"},
+  {location_id: 2, home_team_id: 8, away_team_id: 16, stage_id: 1, starts_at: "2014-06-19 19:00:00"},
+  {location_id: 8, home_team_id: 17, away_team_id: 23, stage_id: 1, starts_at: "2014-06-20 13:00:00"},
+  {location_id: 3, home_team_id: 22, away_team_id: 14, stage_id: 1, starts_at: "2014-06-20 16:00:00"},
+  {location_id: 12, home_team_id: 24, away_team_id: 31, stage_id: 1, starts_at: "2014-06-20 19:00:00"}
+])
+Stage.create!([
+  {name: "Group Stage"},
+  {name: "Round of 16"},
+  {name: "Semi-Finals"},
+  {name: "Quarter-Finals"},
+  {name: "Play-Off for Third Place"},
+  {name: "Final"},
+])
+Team.create!([
+  {name: "Algeria", code: ""},
+  {name: "Cameroon", code: ""},
+  {name: "Côte d'Ivoire", code: ""},
+  {name: "Ghana", code: ""},
+  {name: "Nigeria", code: ""},
+  {name: "Australia", code: ""},
+  {name: "Iran", code: ""},
+  {name: "Japan", code: ""},
+  {name: "Korea Republic", code: ""},
+  {name: "Belgium", code: ""},
+  {name: "Bosnia and Herzegovina", code: ""},
+  {name: "Croatia", code: ""},
+  {name: "England", code: ""},
+  {name: "France", code: ""},
+  {name: "Germany", code: ""},
+  {name: "Greece", code: ""},
+  {name: "Italy", code: ""},
+  {name: "Netherlands", code: ""},
+  {name: "Portugal", code: ""},
+  {name: "Russia", code: ""},
+  {name: "Spain", code: ""},
+  {name: "Switzerland", code: ""},
+  {name: "Costa Rica", code: ""},
+  {name: "Honduras", code: ""},
+  {name: "Mexico", code: ""},
+  {name: "USA", code: ""},
+  {name: "Argentina", code: ""},
+  {name: "Brazil", code: ""},
+  {name: "Chile", code: ""},
+  {name: "Columbia", code: ""},
+  {name: "Ecuador", code: ""},
+  {name: "Uruguay", code: ""}
+])

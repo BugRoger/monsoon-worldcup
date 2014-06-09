@@ -1,0 +1,11 @@
+%p.match
+  .details
+    .starts_at= match.starts_at.to_s(:short)
+    .arena= match.location.arena.name
+    .location= match.location.name
+  .home_team
+    = match.home_team.name
+  .start_time
+    = match.starts_at.to_s(:time)
+  .away_team
+    = match.away_team.name
