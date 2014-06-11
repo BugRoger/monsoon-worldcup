@@ -1,0 +1,42 @@
+!!!
+<!--[if lt IE 7 ]> <html class="ie ie6 dashboard" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 dashboard" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 dashboard" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+%head
+  %title SAP Monsoon Worldcup 
+  = stylesheet_link_tag "application", :media => "all"
+  = javascript_include_tag "application"
+  = favicon_link_tag "favicon.ico"
+  = csrf_meta_tags
+
+  = yield :head
+
+  / IE stuff
+  <!--[if lt IE 9]>
+  = javascript_include_tag "compatibility/html5shiv.js"
+  = javascript_include_tag "unsupported-browser.js"
+  <![endif]-->
+  %meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+  
+%body{class: "#{controller.controller_name}"}
+  .wrap
+    .header
+      .identity
+        = link_to matches_path do
+          = image_tag "sap/empty.gif", :class => 'logo'
+          %h1 Monsoon Worldcup 
+
+    .navbar.tln.tln-action
+      %ul.nav
+        %li
+          = link_to "Matches", matches_path
+        %li
+          = link_to "Leaderboard", matches_path
+
+
+    .content
+      .container
+        = yield
+        
+  = yield :javascripts

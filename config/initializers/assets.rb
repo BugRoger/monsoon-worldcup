@@ -1,0 +1,5 @@
+Rails.application.config.assets.precompile += %w( sap/grid_supplemental.css )
+Rails.application.config.assets.precompile += %w( compatibility/html5shiv.js )
+Rails.application.config.assets.precompile += %w( google-code-prettify/prettify.css )
+Rails.application.config.assets.precompile += %w( google-code-prettify/prettify.js )
+Rails.application.config.assets.precompile += %w( sap/docu.css )

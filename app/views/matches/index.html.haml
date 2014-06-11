@@ -1,4 +1,4 @@
 - @matches.group_by {|m| m.starts_at.strftime("%A %d %B")}.each do |day, matches|
-  %h2= day
+  %h1= day
   = render partial: "match", collection: matches, as: "match"
 

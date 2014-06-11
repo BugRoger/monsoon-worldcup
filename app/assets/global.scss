@@ -1,0 +1,23 @@
+* {
+  @include box-sizing(border-box);
+}
+
+h1 {
+  font-family: $font-family-sap-book;
+  font-weight: normal;
+
+  i {
+    @include opacity(0.9);
+  }
+}
+
+h2 {
+  font-family: $font-family-sap-light;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: $font-family-sap-book;
+  font-weight: normal;
+  font-size: 20px;
+}

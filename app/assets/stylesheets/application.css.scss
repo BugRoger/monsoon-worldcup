@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require sap/bootstrap
  */
+
+@import "compass";
+@import "sap/base/variables";
+@import "sap/base/mixins";
+@import "sap/base/grid_mixins";
+
+.worldcup { @import "shared"; }
+

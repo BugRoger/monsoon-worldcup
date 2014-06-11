@@ -17,10 +17,11 @@ ADD docker/rails/nginx/monsoon-worldcup.conf /etc/nginx/sites-enabled/monsoon-wo
 ADD docker/rails/nginx/postgres.conf /etc/nginx/main.d/postgres.conf
 ADD docker/rails/nginx/rails.conf /etc/nginx/main.d/rails.conf
 
-WORKDIR /tmp 
+WORKDIR /monsoon-worldcup
+RUN mkdir -p /usr/share/monsoon-worldcup/vendor/bundle
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
-RUN bundle install
+RUN bundle install --path /usr/share/monsoon-worldcup/vendor/bundle
 
 # Add public key for ssh login
 #
