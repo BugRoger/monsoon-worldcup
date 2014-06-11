@@ -1,5 +1,11 @@
 FROM phusion/baseimage:0.9.10
 
+# Crap
+ENV http_proxy http://proxy.wdf.sap.corp:8080 
+ENV https_proxy http://proxy.wdf.sap.corp:8080
+ENV ftp_proxy http://proxy.wdf.sap.corp:8080 
+ENV no_proxy sap.corp,localhost
+
 # Set correct environment variables.
 ENV HOME /root
 

@@ -1,9 +1,14 @@
 FROM phusion/passenger-ruby21:0.9.10
 
+# Crap
+ENV http_proxy http://proxy.wdf.sap.corp:8080 
+ENV https_proxy http://proxy.wdf.sap.corp:8080
+ENV ftp_proxy http://proxy.wdf.sap.corp:8080 
+ENV no_proxy sap.corp,localhost
+
 # Set correct environment variables.
 ENV HOME /root
 ENV SECRET_KEY_BASE db48f56a4ffa80bed89d69c849ff63584b6fb4555248a032c1559a0f3de9d4197450e47412142b106a65c9a38501a7b8a93cc861861ece008def2d63903cfeb2
-
 
 RUN apt-get -y update
 RUN apt-get install -y -q postgresql-client libpq-dev
